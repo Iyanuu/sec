@@ -5,7 +5,8 @@ import com.baeldung.security.CustomRememberMeServices;
 import com.baeldung.security.google2fa.CustomAuthenticationProvider;
 import com.baeldung.security.google2fa.CustomWebAuthenticationDetailsSource;
 import com.baeldung.security.location.DifferentLocationChecker;
-import com.maxmind.geoip2.DatabaseReader;
+//import com.maxmind.geoip2.DatabaseReader;
+//
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -150,11 +151,11 @@ public class SecSecurityConfig extends WebSecurityConfigurerAdapter {
         return rememberMeServices;
     }
 
-    @Bean(name="GeoIPCountry")
+  /*  @Bean(name="GeoIPCountry")
     public DatabaseReader databaseReader() throws IOException, GeoIp2Exception {
         final File resource = new File("src/main/resources/maxmind/GeoLite2-Country.mmdb");
         return new DatabaseReader.Builder(resource).build();
-    }
+    } */
 
     @Bean
     public RoleHierarchy roleHierarchy() {

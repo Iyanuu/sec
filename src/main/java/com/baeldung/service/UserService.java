@@ -35,7 +35,7 @@ import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.maxmind.geoip2.DatabaseReader;
+//import com.maxmind.geoip2.DatabaseReader;
 
 @Service
 @Transactional
@@ -59,9 +59,9 @@ public class UserService implements IUserService {
     @Autowired
     private SessionRegistry sessionRegistry;
 
-    @Autowired
+  /*  @Autowired
     @Qualifier("GeoIPCountry")
-    private DatabaseReader databaseReader;
+    private DatabaseReader databaseReader; */
 
     @Autowired
     private UserLocationRepository userLocationRepository;
@@ -245,10 +245,10 @@ public class UserService implements IUserService {
             }).collect(Collectors.toList());
     }
 
-    @Override
+ /*  @Override
     public NewLocationToken isNewLoginLocation(String username, String ip) {
 
-        if(!isGeoIpLibEnabled()) {
+      if(!isGeoIpLibEnabled()) {
             return null;
         }
 
@@ -267,9 +267,9 @@ public class UserService implements IUserService {
             return null;
         }
         return null;
-    }
+    } */
 
-    @Override
+ /*   @Override
     public String isValidNewLocationToken(String token) {
         final NewLocationToken locToken = newLocationTokenRepository.findByToken(token);
         if (locToken == null) {
@@ -313,5 +313,6 @@ public class UserService implements IUserService {
         final NewLocationToken token = new NewLocationToken(UUID.randomUUID()
             .toString(), loc);
         return newLocationTokenRepository.save(token);
-    }
+    } */
+    
 }

@@ -148,16 +148,16 @@ public class RegistrationController {
         return new ModelAndView("login", model);
     }
 
-    @RequestMapping(value = "/user/enableNewLoc", method = RequestMethod.GET)
-    public String enableNewLoc(Locale locale, Model model, @RequestParam("token") String token) {
-        final String loc = userService.isValidNewLocationToken(token);
-        if (loc != null) {
-            model.addAttribute("message", messages.getMessage("message.newLoc.enabled", new Object[] { loc }, locale));
-        } else {
-            model.addAttribute("message", messages.getMessage("message.error", null, locale));
-        }
-        return "redirect:/login?lang=" + locale.getLanguage();
-    }
+ ///  @RequestMapping(value = "/user/enableNewLoc", method = RequestMethod.GET)
+    //public String enableNewLoc(Locale locale, Model model, @RequestParam("token") String token) {
+      //  final String loc = userService.isValidNewLocationToken(token);
+        //if (loc != null) {
+         //   model.addAttribute("message", messages.getMessage("message.newLoc.enabled", new Object[] { loc }, locale));
+       // } else {
+         //   model.addAttribute("message", messages.getMessage("message.error", null, locale));
+        //}
+        //return "redirect:/login?lang=" + locale.getLanguage(); 
+    //}
 
     // ============== NON-API ============
 

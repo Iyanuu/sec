@@ -48,9 +48,9 @@ public interface IUserService {
 
     List<String> getUsersFromSessionRegistry();
 
-    NewLocationToken isNewLoginLocation(String username, String ip);
+   // NewLocationToken isNewLoginLocation(String username, String ip);
 
-    String isValidNewLocationToken(String token);
+   // String isValidNewLocationToken(String token);
 
-    void addUserLocation(User user, String ip);
+    //void addUserLocation(User user, String ip);
 }
